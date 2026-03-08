@@ -1,0 +1,43 @@
+
+:host {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    margin-bottom: 2rem;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 3rem;
+    background-color: var(--bs-white);
+    text-align: center;
+}
+
+.controls-container {
+    text-align: start;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.control-container {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+
+input {
+    width: 100%;
+    margin-bottom: 0.2rem;
+}
+
