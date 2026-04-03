@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { LoginRequest } from '../dtos/login-request.dto';
-import { LoginResponse } from '../dtos/login-response.dto';
 import { Observable, tap } from 'rxjs';
 import { environment } from '../../../../enviroments/enviroments';
+import { LoginRequest } from '../dtos/login-request.dto';
+import { LoginResponse } from '../dtos/login-response.dto';
 
 
 @Injectable({
@@ -11,8 +11,8 @@ import { environment } from '../../../../enviroments/enviroments';
 })
 export class AuthService {
 
-    http = inject(HttpClient);
-    apiBaseUrl = environment.apiUrl
+    private http = inject(HttpClient);
+    private apiBaseUrl = environment.apiUrl
 
     private _isLogged = signal<boolean>(!!localStorage.getItem('access_token'));
     readonly isLogged = this._isLogged.asReadonly()

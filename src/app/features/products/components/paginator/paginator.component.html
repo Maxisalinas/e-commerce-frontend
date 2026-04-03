@@ -1,0 +1,23 @@
+<nav class="paginator">
+    
+    <ul class="pagination">
+        
+        <li class="page-item">
+            <button class="page-link" (click)="onChangePage(currentPage - 1)" [disabled]="currentPage === 1">Anterior</button>
+        </li>
+
+        @for (page of pages(); track $index) {
+            <li class="page-item" [class.active]="page === currentPage">
+                <button class="page-link" (click)="onChangePage(page)">
+                    {{ page }}
+                </button>
+            </li>
+        }
+
+        <li class="page-item">
+            <button class="page-link" (click)="onChangePage(currentPage + 1)" [disabled]="currentPage === totalPages">Siguiente</button>
+        </li>
+
+    </ul>
+
+</nav>

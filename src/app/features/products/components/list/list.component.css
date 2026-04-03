@@ -1,0 +1,8 @@
+.empty-state {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    text-align: center;
+}

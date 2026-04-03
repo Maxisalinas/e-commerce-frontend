@@ -1,3 +1,4 @@
+
 :host {
     display: flex;
     justify-content: center;
@@ -7,7 +8,7 @@ h2 {
     margin-bottom: 2rem;
 }
 
-.register-container {
+.login-form-container {
     width: 100%;
     max-width: 450px;
     padding: 3rem;
@@ -31,29 +32,12 @@ a {
 
 button {
     width: 100%;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
 }
+
 
 input {
     width: 100%;
     margin-bottom: 0.2rem;
 }
 
-
-:is(input, textarea).ng-invalid.ng-touched,
-:is(input, textarea).ng-invalid.ng-dirty {
-  border: 2px solid var(--bs-red);
-}
-
-.spinner {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin: 0.3rem;
-}
-
-.check {
-    font-size: 1.2rem;
-    color: var(--bs-success);
-    margin-left: 0.3rem;
-
-}

@@ -1,0 +1,19 @@
+<div class="row">
+
+    @if (products.length > 0) {
+        @for (product of products; track product.id) {
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <app-card [product]="product"></app-card>
+            </div>
+        }
+
+    } @else {
+        <div class="col-12">
+            <div class="empty-state">
+                <h5>No se encontraron resultados</h5>
+                <p>Lo sentimos, pero no se encontraron resultados que coincidan con su búsqueda. Intente nuevamente.</p>
+            </div>
+        </div>
+    }
+    
+</div>

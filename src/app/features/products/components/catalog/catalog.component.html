@@ -1,0 +1,59 @@
+<section class="container">
+
+    <div class="row">
+        
+        <div class="col-lg-3 col-md-4">
+            <div class="sidebar d-none d-md-block">
+                <app-filters (categoryChange)="onCategoryChange($event)" 
+                    [categories]="(categories$ | async) ?? []">
+                </app-filters>
+            </div>
+        </div>
+
+        <div class="col-lg-9 col-md-8">
+            <div class="catalog-body">
+                <div class="toolbar">
+                    <button 
+                        class="btn btn-primary d-md-none md-justify-content-end" 
+                        type="button" 
+                        data-bs-toggle="offcanvas" 
+                        data-bs-target="#sidebar-mobile">
+                        Filtrar
+                    </button>
+
+                    <app-order-by-selector (orderChange)="onOrderByChange($event)"></app-order-by-selector>
+                </div>
+
+                @if (totalProducts() > 0) {
+                    <p>Se encontraron {{ totalProducts() }} resultados:</p>
+                }
+
+                <app-list [products]="products()"></app-list>
+
+
+                @if (totalProducts() > 0) {
+                    <app-paginator 
+                        [totalPages]="totalPages()" 
+                        [currentPage]="currentPage()"
+                        (pageChange)="onPageChange($event)">
+                    </app-paginator>
+                }
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="sidebar offcanvas offcanvas-start d-md-none" tabindex="-1" id="sidebar-mobile">
+        <div class="offcanvas-header">
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <app-filters 
+                (categoryChange)="onCategoryChange($event)" 
+                [categories]="(categories$ | async) ?? []">
+            </app-filters>
+        </div>
+    </div>
+
+</section>

@@ -9,15 +9,24 @@ export const routes: Routes = [
         component: MainComponent,
         children: [
             {
+                path: 'catalog',
+                loadComponent: () => import('./features/products/pages/catalog/catalog.page').then(m => m.CatalogPage)
+            },
+            // {
+            //     path: 'product-details/:id',
+            //     loadComponent: () => import('./features/products/pages/details/details.page').then(m => m.DetailsPage)
+            // },
+            {
                 path: 'auth/login',
-                loadComponent: () => import('./features/auth/pages/login/login.component').then(m => m.LoginComponent), 
+                loadComponent: () => import('./features/auth/pages/login/login.page').then(m => m.LoginPage),
                 canActivate: [guestGuard]
             },
             {
                 path: 'auth/register',
-                loadComponent: () => import('./features/auth/pages/register/register.component').then(m => m.RegisterComponent), 
+                loadComponent: () => import('./features/auth/pages/register/register.page').then(m => m.RegisterPage),
                 canActivate: [guestGuard]
             }
         ]
     }
+    
 ];

@@ -1,0 +1,9 @@
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        Ordernar por
+    </button>
+    <ul class="dropdown-menu">
+        <li><button class="dropdown-item" (click)="onOrderBySelected('asc')">Precio más bajo</button></li>
+        <li><button class="dropdown-item" (click)="onOrderBySelected('desc')">Precio más alto</button></li>
+    </ul>
+</div>

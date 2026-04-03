@@ -1,0 +1,26 @@
+<div class="dropdown">
+
+    <button 
+        class="toggler btn dropdown-toggle" 
+        type="button" 
+        data-bs-toggle="dropdown">
+        <i class="bi bi-search"></i>
+    </button>
+
+    <div class="dropdown-menu dropdown-menu-lg-end">
+        <div class="d-flex ">
+            <input 
+                class="input-search"
+                type="text"
+                #searchInput 
+                (keyup.enter)="onSearch(searchInput.value)"
+            >
+            <button 
+                class="btn btn-outline-primary"
+                (click)="onSearch(searchInput.value)">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </div>
+
+</div>
